@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Storage Test</title>
+    <script src="js/modernizr.js"></script>
+    <script>
+        function locateUser()
+        {
+            if (Modernizr.geolocation)
+            {
+                alert("Your browser can use Geolocation");
+                navigator.geolocation.getCurrentPosition(showCurrentLocation,errorHandler, {enableHighAccuracy : true});
+            }
+            else
+            {
+                alert("Sorry your browser doesn't like Geolocation");
+            }
+        }
+        function showCurrentLocation(position)
+        {
+            document.getElementById("location").innerHTML = "Your Latitude: " + position.coords.latitude + "<br /><br />" + "Your Longitude: " + position.coords.longitude;
+            localStorage.setItem("prevLatitude", position.coords.latitude);
+            localStorage.setItem("prevLongitude", position.coords.longitude);
+        }
+        function errorHandler (error)
+        {
+            alert("Error loading position.\n\nError code: " + error.code + "\n\nMessage: " + error.message);
+        }
+    </script>
+</head>
+<body>
+    <div id="location">
+        <input type="button" value="Where am I?" onclick="locateUser()" />
+    </div>
+    <p>
+        My Previous Coordinates: <br />
+        <textarea id="coordhistory" width="300" height="300"></textarea>
+        <script>
+            if (Modernizr.localstorage)
+            {
+                alert ("Web storage capable");
+                var savedpositions = document.getElementById("coordhistory");
+                savedpositions.value = "Previous Latitude: " + localStorage.getItem("prevLatitude") + " Previous Longitude: " + localStorage.getItem("prevLongitude");
+            }
+            else
+            {
+                alert("Your browser does not support Web Storage");
+            }
+        </script>
+    </p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anytown Civic Center</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scrolable=no">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="popup" id="eventregister" data-overlay-theme="b" data-theme="b" data-dismissible="false">
+                <div data-role="header" data-theme="a">
+                    <h1>Current Events</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h3 class="ui-title">Sorry, currently there are no scheduled events.</h3>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Close</a>
+                </div>
+            </div>
+
+            <div data-role="header">
+                <a href="index.html" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-home">Home</a>
+                <h1>Welcome to Anytown Civic Center!</h1>
+                <a href="#eventregister" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn-b ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-calendar">Events</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="facilities.html" data-ajax="false">Facilities</a></li>
+                        <li><a href="#">Catering</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="panel" id="contactpanel" data-display="push" data-dismissible="true" data-theme="a">
+                <div>
+                    <p>Contact Us!</p>
+                    <a href="tel:555-555-5555">(555)555-5555</a>
+                    <p>1234 First Avenue</p>
+                    <p>Anytown, Anystate 12345</p>
+                    <a href="mailto:contact@anytownciviccenter.com">contact@anytownciviccenter.com</a>
+                </div>
+            </div><!-- /panel -->
+
+            <div class="ui-content" role="main">
+                <p>Founded in 2014, Anytown Civic Center plans to be the premier venue for the hottest concerts, the greatest sports events, the best conferences and the most extravagant weddings.</p>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+                <h2>
+                    <a href="#contactpanel" data-rel="panel" class="ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-phone">Contact Us</a>
+                </h2>
+            </div>
+        </div><!-- /page -->
+    </body>
+</html>
